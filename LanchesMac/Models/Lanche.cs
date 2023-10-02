@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LanchesMac.Models;
@@ -22,7 +23,9 @@ public class Lanche
     public string DescricaoDetalhada { get; set; }
 
     [NotMapped]
-    public DateTime DataDeCriacao {get; set;}    
+    public DateTime DataDeCriacao {get; set;}
+
+    [Precision(10,2)]
     public decimal Preco { get; set; }
     public string ImagemUrl { get; set; }
     public string ImagemThumbnailUrl { get; set; }
