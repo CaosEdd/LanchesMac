@@ -14,7 +14,7 @@ namespace LanchesMac.Repositories
         }
         public IEnumerable<Lanche> Lanches => _context.Lanches.Include(c => c.Categoria);
 
-        public IEnumerable<Lanche> LanchesPreferidos => _context.Lanches.
+        public IEnumerable<Lanche> LanchesPreferidos => _context.Lanches.AsNoTracking().
                                    Where(l => l.IsLanchePreferido).
                                    Include(c => c.Categoria);
 
